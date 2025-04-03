@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed); /* Smooth gradient background */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.calculator {
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    padding: 20px; /* Reduced padding */
+    width: 400px; /* Adjust width */
+    height: auto; /* Let height adjust dynamically */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+
+.calculator-header {
+    background-color: hsla(50, 79%, 39%, 0.358); /* Subtle header background */
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 20px; /* Space between the header and the screen */
+    border-radius: 15px; /* Rounded corners for header */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    animation: headerGlow 2s ease-in-out infinite alternate; /* Animated glow effect */
+}
+
+.calculator-header h1 {
+    font-size: 2.2rem;
+    color: #2c3e50; /* Dark color for the text */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Uppercase for a bold look */
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* Glow effect for header text */
+}
+
+/* Glow effect for header */
+@keyframes headerGlow {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(52, 152, 219, 0.8);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(155, 89, 182, 0.8);
+    }
+}
+
+.calculator-screen {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: #2c3e50; /* Darker screen background */
+    color: #ecf0f1; /* Light text for visibility */
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 10px;
+    font-size: 2.8rem;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px hsla(0, 0%, 100%, 0.401);
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Grid with 4 columns */
+    gap: 20px; /* Increased gap between buttons */
+    padding: 20px; /* Increased padding for a wider background area */
+    background-color: #34495e; /* Background color for button section */
+    border-radius: 15px;
+    width: calc(100% + 20px); /* Slightly wider width for the background section */
+    margin-left: -10px; /* Shifting to the left to maintain alignment */
+}
+
+.calculator-keys button {
+    height: 80px; /* Uniform button height */
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 15px;
+    background-color: #ecf0f1; /* Light gray background */
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure all buttons take the full available width of their grid column */
+}
+
+.calculator-keys button:hover {
+    background-color: #d5d8dc; /* Slight dark hover effect */
+    transform: scale(1.1); /* Slight scaling on hover */
+}
+
+.calculator-keys button.operator {
+    background-color: #3498db; /* Soft blue for operators */
+    color: #fff;
+}
+
+.calculator-keys button.operator:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.calculator-keys button.equal-sign {
+    background-color: #e74c3c; /* Vibrant red for equals */
+    color: #fff;
+    grid-column: span 2;
+}
+
+.calculator-keys button.all-clear {
+    background-color: #f39c12; /* Golden color for clear button */
+    color: #fff;
+    grid-column: span 2;
+}
+
+.calculator-keys button.delete {
+    background-color: hsla(0, 65%, 56%, 0.749); /* Vibrant red for DEL */
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove padding for a more uniform button size */
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Ensure the DEL button takes the full width of its grid column */
+    height: 80px; /* Same height as other buttons */
+    margin: 0 auto; /* Center the text within the button */
+}
+
+.calculator-keys button.delete:hover {
+    background-color: hsl(5, 92%, 20%); /* Darker red hover */
+    transform: scale(1.10);
+}
+
+.calculator-keys button.delete:active {
+    background-color: #b0bec5; /* Light gray active effect */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-keys button:active {
+    background-color: #b0bec5; /* Light gray active effect */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
